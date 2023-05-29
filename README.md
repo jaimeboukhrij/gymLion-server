@@ -2,14 +2,14 @@ AUTH ROUTES
 
 | HTTP Method | URL Path     | Description             |
 |-------------|--------------|-------------------------|
-| POST        | /signUp      | Sign up                 |
+| POST        | `/signUp`      | Sign up                 |
 | POST        | /logIn       | Log in                  |
 | GET         | /verify      | Verify                  |
 
 
 
 
-ALIMENT ROUTES
+FOODS ROUTES
 
 | HTTP Method | URL Path        | Description               |
 |-------------|-----------------|---------------------------|
@@ -26,5 +26,5 @@ MEAL PLANNING DAY ROUTES
 |-------------|-----------------|-------------------------|
 | GET         | /mealDay        | View my daily meals     |
 | POST        | /mealDay        | Add my daily meals      |
-| EDIT        | /mealDay        | Edit my daily meals     |
+| PUT        | /mealDay        | Edit my daily meals     |
 | DELETE      | /mealDay        | Remove my daily meals   |

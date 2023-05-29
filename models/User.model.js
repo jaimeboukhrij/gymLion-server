@@ -20,12 +20,12 @@ const userSchema = new Schema({
     required: [true, 'El Nombre es obligatorio']
   },
 
-  secondName: {
+  lastName: {
     type: String,
     required: [true, 'El apellido es obligatorio']
   },
 
-  profileImg: {
+  avatar: {
     type: String,
     required: [true, 'La imagen es obligatorio']
   },
