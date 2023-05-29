@@ -1,15 +1,30 @@
+AUTH ROUTES
+
+| HTTP Method | URL Path     | Description             |
+|-------------|--------------|-------------------------|
+| POST        | /signUp      | Sign up                 |
+| POST        | /logIn       | Log in                  |
+| GET         | /verify      | Verify                  |
 
 
-| HTTP Method | URL Path                        | Description                      | JSON |
-|-------------|---------------------------------|----------------------------------|------|
-| POST        | /api/signUp                     | registrate                       |      |
-| POST        | /api/logIn                      | iniciar sesion                   |      |
-| GET         | /api/verify                     | verificar                        |  YES |
-| GET         | /api/misAlimentos               | ver mis alim fav                 |  YES |
-| POST        | /api/misAlimentos               | añadir a fav mis alim            |      |
-| DELETE      | /api/misAlimentos               | eliminar de fav mis alimentos    |      |
-| GET         | /api/mealDay                    | ver mis comidas diarias          |  YES |
-| POST        | /api/mealDay                    | añadir mis comidas diarias       |      |
-| EDIT        | /api/mealDay                    | editar mis comidas diarias       |      |
-| DELETE      | /api/mealDay                    | eliminar mis comidas diarias     |      |
 
+
+ALIMENT ROUTES
+
+| HTTP Method | URL Path        | Description               |
+|-------------|-----------------|---------------------------|
+| GET         | /misAlimentos   | View my favorite foods    |
+| POST        | /misAlimentos   | Add to my favorite foods  |
+| DELETE      | /misAlimentos   | Remove from favorite foods|
+
+
+
+
+MEAL PLANNING DAY ROUTES
+
+| HTTP Method | URL Path        | Description             |
+|-------------|-----------------|-------------------------|
+| GET         | /mealDay        | View my daily meals     |
+| POST        | /mealDay        | Add my daily meals      |
+| EDIT        | /mealDay        | Edit my daily meals     |
+| DELETE      | /mealDay        | Remove my daily meals   |

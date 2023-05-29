@@ -12,18 +12,34 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
+
   },
 
   firstName: {
     type: String,
+    required: [true, 'El Nombre es obligatorio']
   },
 
   secondName: {
     type: String,
+    required: [true, 'El apellido es obligatorio']
   },
 
   profileImg: {
     type: String,
+    required: [true, 'La imagen es obligatorio']
+  },
+
+  IMB: {
+    type: Number,
+  },
+
+  weight: {
+    type: Number,
+  },
+
+  height: {
+    type: Number,
   },
 
 },
