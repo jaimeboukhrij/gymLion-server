@@ -58,6 +58,7 @@ router.post('/login', (req, res, next) => {
     .findOne({ email })
     .then((foundUser) => {
 
+
       if (!foundUser) {
         res.status(401).json({ message: "User not found." })
         return;
@@ -65,8 +66,8 @@ router.post('/login', (req, res, next) => {
 
       if (bcrypt.compareSync(password, foundUser.password)) {
 
-        const { email, firstName, lastName, avatar } = foundUser;
-        const payload = { email, firstName, lastName, avatar }
+        const { email, firstName, lastName, avatar, _id } = foundUser;
+        const payload = { email, firstName, lastName, avatar, _id }
 
 
         const authToken = jwt.sign(
