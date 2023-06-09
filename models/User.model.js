@@ -41,6 +41,22 @@ const userSchema = new Schema({
   height: {
     type: Number,
   },
+  favouriteExcercise: [String],
+  favouriteFood: [String],
+
+  chest: [{
+    x: Date,
+    y: Number
+  }],
+  squat: [{
+    x: Date,
+    y: Number
+  }],
+  dead: [{
+    x: Date,
+    y: Number
+  }]
+
 
 },
 
