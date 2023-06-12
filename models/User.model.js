@@ -8,6 +8,7 @@ const userSchema = new Schema({
     unique: true,
     required: [true, 'El email es obligatorio']
   },
+  userName: String,
 
   password: {
     type: String,
@@ -30,12 +31,12 @@ const userSchema = new Schema({
     required: [true, 'La imagen es obligatorio']
   },
 
-  IMB: {
-    type: Number,
-  },
 
-  weight: {
-    type: Number,
+  gym: String,
+
+  friends: {
+    ref: 'User',
+    type: Schema.Types.ObjectId,
   },
 
   height: {

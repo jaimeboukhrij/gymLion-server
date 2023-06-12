@@ -40,6 +40,11 @@ router.post('/signup', (req, res, next) => {
     .catch(err => {
       next(err)
     })
+
+
+
+
+
 })
 
 
@@ -66,8 +71,8 @@ router.post('/login', (req, res, next) => {
 
       if (bcrypt.compareSync(password, foundUser.password)) {
 
-        const { email, firstName, lastName, avatar, _id } = foundUser;
-        const payload = { email, firstName, lastName, avatar, _id }
+        const { email, firstName, lastName, avatar, _id, gym } = foundUser;
+        const payload = { email, firstName, lastName, avatar, _id, gym }
 
 
         const authToken = jwt.sign(
