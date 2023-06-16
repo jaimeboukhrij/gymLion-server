@@ -16,9 +16,13 @@ const getOneUser = (req, res, next) => {
             const data = {
                 img: response.avatar,
                 userName: response.userName,
-                gym: response.gym || ""
+                gym: response.gym || "",
+                firstName: response.firstName,
+                lastName: response.lastName,
+                headerImg: response.headerImg,
+                id: response.id
             }
-
+            console.log("dataaaaa", data)
 
             res.json(data)
         })

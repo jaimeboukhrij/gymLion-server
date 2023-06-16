@@ -9,12 +9,15 @@ const saltRounds = 10
 
 router.post('/signup', (req, res, next) => {
 
-  const { email, password, firstName, lastName, avatar } = req.body
+  const { email, password, firstName, lastName, avatar, userName, headerImg } = req.body
+  const chatPassword = password
 
   if (password.length < 2) {
     res.status(400).json({ message: 'Password must have at least 2 characters' })
     return
   }
+
+  const gym = "ChIJsaagRz0tQg0RlPO4jRwbLGg"
 
   User
     .findOne({ email })
@@ -28,12 +31,12 @@ router.post('/signup', (req, res, next) => {
       const salt = bcrypt.genSaltSync(saltRounds)
       const hashedPassword = bcrypt.hashSync(password, salt)
 
-      return User.create({ email, password: hashedPassword, firstName, lastName, avatar })
+      return User.create({ email, password: hashedPassword, firstName, lastName, avatar, userName, chatPassword, headerImg, gym })
     })
     .then((createdUser) => {
 
-      const { email, firstName, lastName, avatar } = createdUser
-      const user = { email, firstName, lastName, avatar }
+      const { email, firstName, lastName, avatar, userName, chatPassword, headerImg } = createdUser
+      const user = { email, firstName, lastName, avatar, userName, chatPassword, headerImg }
 
       res.status(201).json({ user })
     })
@@ -71,8 +74,8 @@ router.post('/login', (req, res, next) => {
 
       if (bcrypt.compareSync(password, foundUser.password)) {
 
-        const { email, firstName, lastName, avatar, _id, gym } = foundUser;
-        const payload = { email, firstName, lastName, avatar, _id, gym }
+        const { email, firstName, lastName, avatar, _id, gym, userName, chatPassword, headerImg } = foundUser;
+        const payload = { email, firstName, lastName, avatar, _id, gym, userName, chatPassword, headerImg }
 
 
         const authToken = jwt.sign(

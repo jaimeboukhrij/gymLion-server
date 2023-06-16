@@ -31,6 +31,11 @@ const userSchema = new Schema({
     required: [true, 'La imagen es obligatorio']
   },
 
+  headerImg: {
+    type: String,
+  },
+
+
 
   gym: String,
 

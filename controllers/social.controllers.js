@@ -8,15 +8,22 @@ const savePost = (req, res, next) => {
     const { text, urlCloudinary } = req.body
     const { _id: idOwner, gym } = req.payload
 
-    console.log("creaaaandoooo poooost")
 
     let timeNow = new Date()
+    console.log("text y cloud", text, urlCloudinary)
 
-    text != "" &&
+    if (text || urlCloudinary) {
+
         Post
             .create({ text: text, image: urlCloudinary, owner: idOwner, time: timeNow, gym: gym })
-            .then(response => res.json(response))
+            .then(response => {
+                res.json(response)
+                console.log("creaaaandoooo poooost")
+
+            })
             .catch((err) => next(err));
+
+    }
 }
 
 
